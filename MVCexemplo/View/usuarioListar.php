@@ -19,7 +19,10 @@
                 <td><?= $u['nome']?></td>
                 <td><?= $u['email']?></td>
                 <td>
-                    <a href="/PB_PHP/MVCexemplo/usuario/telaEditar?id=<?= $id ?>">Editar</a>
+    <a href="/PB_PHP/MVCexemplo/usuario/telaEditar?id=<?= $id ?>">Editar</a>
+        </a>
+     <a href="/PB_PHP/MVCexemplo/excluir?id=<?= $id ?>">Excluir</a>
+
                 </td>
             </tr>
         <?php endforeach; ?>
