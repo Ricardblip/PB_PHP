@@ -16,7 +16,7 @@ class UsuarioController{
         $usuario = new Usuario($nome, $email);
         $usuario->salvar();
         // redirecionar ao depois de salvar
-        header('Location: /PHP_PBE_2IDS_2025/MVCExemplo/usuario/telaCadastro');
+        header('Location: /PB_PHP/MVCExemplo/usuario/telaCadastro');
         exit;
     }
 
@@ -26,5 +26,17 @@ class UsuarioController{
         print_r($usuarios);
         echo "</pre>";
         require 'View/usuarioListar.php';
+    }
+
+    public function telaEditar(){
+        $usuario = Usuario ::buscar ($_GET['id']);
+        require 'View/usuarioEditar.php';
+    }
+
+    public function atualizar(){
+        $usuario = new Usuario($_POST['nome'], $_POST['email']);
+        $usuario->atualizar($_GET['id']);
+        header('Location: /PB_PHP/MVCExemplo/usuario/telaEditar?id='.($_GET['id']));
+        exit;
     }
 }

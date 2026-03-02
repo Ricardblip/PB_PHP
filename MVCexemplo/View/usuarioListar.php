@@ -6,7 +6,7 @@
     <title>Lista de Usuarios</title>
 </head>
 <body>
-    <a href="/PB_PHP/MVCexemplos/usuario/telaCadastro">Voltar a tela telaCadastro</a>
+    <a href="/PB_PHP/MVCexemplo/usuario/telaCadastro">Voltar a tela telaCadastro</a>
     <h2>Usuários</h2>
     <table border= "1">
         <tr>
@@ -14,11 +14,13 @@
             <th>Email</th>
             <th>Ações</th>
         </tr>
-        <?php foreach($usuarios as $u): ?>
+        <?php foreach($usuarios as $id => $u): ?>
             <tr>
                 <td><?= $u['nome']?></td>
                 <td><?= $u['email']?></td>
-                <td>proxima aula</td>
+                <td>
+                    <a href="/PB_PHP/MVCexemplo/usuario/telaEditar?id=<?= $id ?>">Editar</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
